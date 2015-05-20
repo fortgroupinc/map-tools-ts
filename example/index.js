@@ -1,5 +1,8 @@
 
-// Map
+// That could be a module: mapTools. So that I can export addMarker and createMap as independent classes.
+// The problem is that it needs to behave like a Class. So perhaps we need to create the module first,
+// then attach methods?
+
 var mapTools;
 (function(mapTools) {
 
