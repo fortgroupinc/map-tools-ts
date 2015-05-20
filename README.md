@@ -1,4 +1,6 @@
-## map-tools 1.3.0 
+TypeScript Migration Repo
+
+## map-tools 1.4.0 
 
 [![Build](https://travis-ci.org/yagoferrer/map-tools.svg?branch=master)](https://travis-ci.org/yagoferrer/map-tools) 
 [![Coverage](https://coveralls.io/repos/yagoferrer/map-tools/badge.svg?branch=master)](https://coveralls.io/r/yagoferrer/map-tools)
