@@ -1,3 +1,10 @@
-function test() {
-    return 'test'
+module mapTools {
+
+
 }
+
+
+
+var MT = mapTools.createMap.createMap
+MT.prototype.addMarker = mapTools.addMarker.addMarker;
+

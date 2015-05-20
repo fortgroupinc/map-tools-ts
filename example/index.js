@@ -8,7 +8,6 @@ var mapTools;
 
 
   mapTools = function(options, cb) {
-
     this.createMap(options, cb);
   };
 
