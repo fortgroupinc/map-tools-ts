@@ -15,8 +15,8 @@ var mapTools;
 
   // Make this a Static TypeScript Class
   mapTools.prototype.createMap = function(options, cb) {
-    console.log('create map code');
 
+    // Some logic follows here to create a Map instance.
     this.instance = {};
 
     // async
