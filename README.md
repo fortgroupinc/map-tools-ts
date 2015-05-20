@@ -1,4 +1,4 @@
-TypeScript Migration Repo
+## map-tools migration to TypeScript.
 
 ## map-tools 1.4.0 
 
