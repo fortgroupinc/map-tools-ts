@@ -8,6 +8,7 @@
     "dist/map-tools.js"
   ],
   "scripts": {
+    "ts": "node_modules/.bin/tsc lib/*.ts --out lib/index.js"
   },
   "repository": {
     "type": "git",
