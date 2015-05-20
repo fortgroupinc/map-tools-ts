@@ -1,5 +1,6 @@
-var mapTools;
 
+// Map
+var mapTools;
 (function(mapTools) {
 
 
