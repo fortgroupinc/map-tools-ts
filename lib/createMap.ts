@@ -1,7 +1,7 @@
 module mapTools {
   export class createMap {
 
-    public static createMap(options, cb) {
+    constructor(options, cb) {
 
       console.log('creates a map');
 
