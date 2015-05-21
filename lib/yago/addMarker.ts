@@ -1,7 +1,16 @@
-module _mapTools {
+/// <reference path="references.ts"/>module mapTools {
+
+
+module mapTools {
+
   export class addMarker {
-    public static addMarker(options) {
-      console.log('add a Marker with options %s', options);
+
+    private instance;
+
+    constructor() {}
+
+    public add(options) {
+      console.log('add a Marker with options %s', options, this.instance);
     }
 
   }
