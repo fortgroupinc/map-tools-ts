@@ -37,7 +37,7 @@ BUILD_DIR     := build
 SOURCE_DIR    := lib
 
 # typescript
-TS_FLAGS      := --sourceMap --target ES5 --module commonjs --noEmitOnError
+TS_FLAGS      := --sourceMap --target ES5 --module commonjs
 
 # ----------------------------------------------------------------------------------------------------------------------
 
