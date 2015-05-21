@@ -1,9 +1,9 @@
 module mapTools {
   export class addMarker {
 
-    public static addMarker() {
+    public static addMarker(options) {
 
-      console.log('add a Marker');
+      console.log('add a Marker with options %s', options);
 
     }
 

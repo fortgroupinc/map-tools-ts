@@ -1,8 +1,5 @@
+/// <reference path="references.ts"/>
 module mapTools {
 
-
+    export var crossfilter = require('crossfilter');
 }
-
-var MT = mapTools.createMap;
-MT.prototype.addMarker = mapTools.addMarker.addMarker;
-
