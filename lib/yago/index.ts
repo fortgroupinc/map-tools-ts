@@ -1,11 +1,14 @@
 /// <reference path="references.ts"/>
 module _mapTools {
-
     export var crossfilter = require('crossfilter');
 }
 
-// To expose:
-var mapTools = _mapTools.createMap;
-mapTools.prototype.addMarker = _mapTools.addMarker;
 
+class mapTools extends _mapTools.createMap {
+  public crossfilter = _mapTools.crossfilter;
+  public addMarker = _mapTools.addMarker.addMarker
+}
 
+// Node
+
+module.exports = mapTools;
