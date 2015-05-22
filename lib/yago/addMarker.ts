@@ -7,10 +7,8 @@ module mapTools {
 
     private instance;
 
-    constructor() {}
-
     public add(options) {
-      console.log('add a Marker with options %s', options, this.instance);
+      console.log('add a Marker with options! %s', options, this.instance);
     }
 
   }
