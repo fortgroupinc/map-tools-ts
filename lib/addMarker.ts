@@ -1,4 +1,4 @@
-/// <reference path="references.ts"/>module mapTools {
+/// <reference path="references.ts"/>
 
 
 module mapTools {

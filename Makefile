@@ -13,7 +13,6 @@ MAKE  := /usr/bin/make
 SHELL := bash
 .SHELLFLAGS := -eu -o pipefail -c
 .DEFAULT_GOAL := help
-.MAKEFLAGS := -j4
 .SUFFIXES:
 
 
@@ -34,14 +33,14 @@ NPM  ?= npm
 # Project specific vars
 # ----------------------------------------------------------------------------------------------------------------------
 
-BUILD_DIR  := build
-SOURCE_DIR := lib
+BUILD_DIR     := build
+SOURCE_DIR    := lib
 
 TS_FLAGS   := --sourceMap --target ES5 --module commonjs
 
 BSF_FLAGS  := --standalone mapTools --debug --verbose
-BSF_DIR    := $(BUILD_DIR)/yago
-BSF_SRC    := $(BUILD_DIR)/yago/index.js
+BSF_DIR    := $(BUILD_DIR)/
+BSF_SRC    := $(BUILD_DIR)/index.js
 BSF_OUT    := dist/mapTools.js
 
 # include sub Makefiles
