@@ -1,6 +1,3 @@
-
-# MAINTAINER: Gert Petja <gpetja@zephyrhealth.com>
-
 # $@: $<
 
 ## prologue
