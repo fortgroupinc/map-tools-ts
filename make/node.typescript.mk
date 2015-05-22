@@ -1,27 +1,17 @@
 
 # MAINTAINER:
 # Peter Chanthamynavong <peterc@zephyrhealth.com>
-
-# Check vars defined in main Makefile
-# ----------------------------------------------------------------------------------------------------------------------
-
-ifndef TS_FLAGS
-$(error TS_FLAGS is undefined)
-endif
+# Gert Petja <gpetja@zephyrhealth.com>
 
 # ----------------------------------------------------------------------------------------------------------------------
 
-BUILD_DIR   ?= build
-SOURCE_DIR  ?= lib
+BUILD_DIR  ?= build
+SOURCE_DIR ?= lib
+DTS_DIR    ?= typings
 
 TS_EXE   := node_modules/typescript/bin/tsc
-TS_SRC   := $(filter-out $(wildcard $(SOURCE_DIR)/*/*.d.ts plugins/*/*.d.ts), $(wildcard $(SOURCE_DIR)/*.ts $(SOURCE_DIR)/*/*.ts plugins/*.ts plugins/*/*.ts))
+TS_SRC   := $(filter-out $(wildcard $(SOURCE_DIR)/*/*.d.ts), $(wildcard $(SOURCE_DIR)/*.ts $(SOURCE_DIR)/*/*.ts))
 TS_DST   := $(patsubst $(SOURCE_DIR)/%.ts,$(BUILD_DIR)/%.js,$(TS_SRC))
-
-HTML_SRC := $(wildcard $(SOURCE_DIR)/*.html $(SOURCE_DIR)/*/*.html)
-HTML_DST := $(patsubst $(SOURCE_DIR)/%.html,$(BUILD_DIR)/%.html,$(HTML_SRC))
-
-MAKE_FILES :=
 
 # RULES: $@: $<
 
@@ -44,20 +34,20 @@ $(BUILD_DIR):
 # 2. %.js is older than %.ts
 $(BUILD_DIR)/%.js: $(SOURCE_DIR)/%.ts
 	@printf '\e[1;32m %-10s\e[m%s > %s\n' 'compiling' '$<' '$@'
-	@$(TS_EXE) $(TS_FLAGS) --out $@ $<
+	$(TS_EXE) $(TS_FLAGS) --out $@ $<
 
-$(BUILD_DIR)/%.html: $(SOURCE_DIR)/%.html
-	@printf '\e[1;32m %-10s\e[m %s > %s\n' 'copying' '$<' '$@'
-	@cp -f $< $@
+# compile and delete output if error
+#	@$(TS_EXE) $(TS_FLAGS) --out $@ $< || case $$? in \
+#		1|127) rm $@ \
+#		; echo -e '*** Error \x1B[32mmake x\x1B[39m ***' ;; \
+#		*) false ;; \
+#	esac
 
 # ----------------------------------------------------------------------------------------------------------------------
-.PHONY: ts ts-compile ts-clean
+.PHONY: ts ts-clean
 
 # compile *.ts --> *.js
-ts: Makefile $(BUILD_DIR) $(TS_EXE) $(TS_DST) $(HTML_DST)
-	@printf '\e[1;32m %-10s\e[m%s\n' 'compiling' 'done'
-	@echo
-	@echo ' For faster compiling: make -j4 ts'
+ts: $(BUILD_DIR) $(TS_EXE) $(TS_DST)
 
 ts-clean:
 	rm -f lib/*.js*
