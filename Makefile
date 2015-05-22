@@ -44,7 +44,6 @@ BSF_OUT    := dist/mapTools.js
 # ----------------------------------------------------------------------------------------------------------------------
 
 include make/common.debug.mk
-include make/common.help.mk
 
 include make/node.typescript.mk
 include make/node.browserify.mk
