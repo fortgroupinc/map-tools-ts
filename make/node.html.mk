@@ -10,7 +10,7 @@ HTML_DST := $(patsubst $(SOURCE_DIR)/%.html,$(BUILD_DIR)/%.html,$(HTML_SRC))
 .PHONY: html
 
 $(BUILD_DIR)/%.html: $(SOURCE_DIR)/%.html
-	@printf '\e[1;32m %-10s\e[m %s > %s\n' 'copying' '$<' '$@'
+	@printf '\e[1;32m  %-10s\e[m %s > %s\n' 'copying' '$<' '$@'
 	@cp -f $< $@
 
 html: $(HTML_DST)

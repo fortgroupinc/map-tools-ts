@@ -28,7 +28,7 @@ $(BUILD_DIR):
 # 1. %.js does not exists
 # 2. %.js is older than %.ts
 $(BUILD_DIR)/%.js: $(SOURCE_DIR)/%.ts
-	@printf '\e[1;32m %-10s\e[m%s > %s\n' 'compiling' '$<' '$@'
+	@printf '\e[1;32m  %-10s\e[m%s > %s\n' 'compiling' '$<' '$@'
 	@$(TS_EXE) $(TS_FLAGS) --out $@ $<
 
 # compile and delete output if error

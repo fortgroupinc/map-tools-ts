@@ -3,16 +3,27 @@
 BUILD_DIR   ?= build
 SOURCE_DIR  ?= lib
 
-BSF_FLAGS ?= --standalone 'mapTools' --debug
+BSF_FLAGS := --standalone 'mapTools' --debug
 BSF_EXE   := ./node_modules/browserify/bin/cmd.js
 BSF_DIR   := $(BUILD_DIR)
 
-BSF_SRC   := build/yago/index.js
-BSF_OUT   := dist/mapTools.js
+# see main Makefile which
+#BSF_SRC   := build/empty.js
+#BSF_OUT   := dist/empty.js
+
+ifeq (,$(BSF_SRC))
+$(error BSF_SRC is undefined)
+endif
+
+ifeq (,$(BSF_OUT))
+$(error BSF_OUT is undefined)
+endif
 
 # ----------------------------------------------------------------------------------------------------------------------
 $(BSF_OUT): $(BSF_SRC)
-	$(BSF_EXE) $(BSF_FLAGS) -o $@ -- $<
+	@printf '\e[1;32m  %-10s\e[m %s > %s\n' 'browserify' '$<' '$@'
+	@mkdir -p $(dir $@)
+	@$(BSF_EXE) $(BSF_FLAGS) -o $@ -- $<
 
 .PHONY: browser browser-clean
 

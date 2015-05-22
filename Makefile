@@ -13,6 +13,7 @@ MAKE  := /usr/bin/make
 SHELL := bash
 .SHELLFLAGS := -eu -o pipefail -c
 .DEFAULT_GOAL := help
+.MAKEFLAGS := -j4
 .SUFFIXES:
 
 
@@ -33,11 +34,15 @@ NPM  ?= npm
 # Project specific vars
 # ----------------------------------------------------------------------------------------------------------------------
 
-BUILD_DIR     := build
-SOURCE_DIR    := lib
+BUILD_DIR  := build
+SOURCE_DIR := lib
 
-# typescript
-TS_FLAGS      := --sourceMap --target ES5
+TS_FLAGS   := --sourceMap --target ES5 --module commonjs
+
+BSF_FLAGS  := --standalone mapTools --debug --verbose
+BSF_DIR    := $(BUILD_DIR)/yago
+BSF_SRC    := $(BUILD_DIR)/yago/index.js
+BSF_OUT    := dist/mapTools.js
 
 # include sub Makefiles
 # ----------------------------------------------------------------------------------------------------------------------
@@ -49,20 +54,12 @@ include make/node.typescript.mk
 include make/node.browserify.mk
 include make/node.html.mk
 
-# app targets
+# app targets calling other targets in sub Makefile
 # ----------------------------------------------------------------------------------------------------------------------
 .PHONY: compile clean
 
 clean: ts-clean browser-clean
 	@printf '\e[1;32m  %-10s\e[m%s\n' 'done'
 
-compile: TS_FLAGS   = '--sourceMap --target ES5 --module commonjs'
-compile: BSF_FLAGS  = '--standalone mapTools --debug'
-compile: BSF_DIR    = $(BUILD_DIR)/yago
-compile: BSF_SRC    = $(BUILD_DIR)/yago/index.js
-compile: BSF_OUT    = $(BUILD_DIR)/yago/mapTools-browser.js
-compile:
-	@$(MAKE) --silent ts TS_FLAGS=$(TS_FLAGS) BUILD_DIR=$(BUILD_DIR) SOURCE_DIR=$(SOURCE_DIR)
-	@$(MAKE) --silent browser BSF_FLAGS=$(BSF_FLAGS) BSF_DIR=$(BSF_DIR) BSF_OUT=$(BSF_OUT) BSF_SRC=$(BSF_SRC)
-	@$(MAKE) --silent html
+compile: ts browser html
 	@printf '\e[1;32m  %-10s\e[m%s\n' 'done'
