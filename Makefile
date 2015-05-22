@@ -61,5 +61,4 @@ compile: BSF_SRC    = $(BUILD_DIR)/index.js
 compile:
 	@$(MAKE) ts TS_FLAGS=$(TS_FLAGS) BUILD_DIR=$(BUILD_DIR) SOURCE_DIR=$(SOURCE_DIR)
 	@$(MAKE) browser BSF_FLAGS=$(BSF_FLAGS) BSF_DIR=$(BSF_DIR) BSF_OUT=$(BSF_OUT) BSF_SRC=$(BSF_SRC)
-	@$(MAKE) html SOURCE_DIR=$(SOURCE_DIR)
 	@printf '\e[1;32m  %-10s\e[m%s\n' 'done'
