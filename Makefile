@@ -51,7 +51,6 @@ include make/common.help.mk
 
 include make/node.typescript.mk
 include make/node.browserify.mk
-include make/node.html.mk
 
 # app targets calling other targets in sub Makefile
 # ----------------------------------------------------------------------------------------------------------------------
