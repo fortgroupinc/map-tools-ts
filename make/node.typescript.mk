@@ -34,7 +34,7 @@ $(BUILD_DIR):
 # 2. %.js is older than %.ts
 $(BUILD_DIR)/%.js: $(SOURCE_DIR)/%.ts
 	@printf '\e[1;32m %-10s\e[m%s > %s\n' 'compiling' '$<' '$@'
-	$(TS_EXE) $(TS_FLAGS) --out $@ $<
+	@$(TS_EXE) $(TS_FLAGS) --out $@ $<
 
 # compile and delete output if error
 #	@$(TS_EXE) $(TS_FLAGS) --out $@ $< || case $$? in \
