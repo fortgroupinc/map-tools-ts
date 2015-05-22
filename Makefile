@@ -56,7 +56,6 @@ include make/node.html.mk
 clean: ts-clean browser-clean
 	@printf '\e[1;32m  %-10s\e[m%s\n' 'done'
 
-compile: SOURCE_DIR = lib/yago
 compile: TS_FLAGS   = '--sourceMap --target ES5 --module commonjs'
 compile: BSF_FLAGS  = '--standalone mapTools --debug'
 compile: BSF_DIR    = $(BUILD_DIR)/yago
@@ -65,5 +64,5 @@ compile: BSF_OUT    = $(BUILD_DIR)/yago/mapTools-browser.js
 compile:
 	@$(MAKE) --silent ts TS_FLAGS=$(TS_FLAGS) BUILD_DIR=$(BUILD_DIR) SOURCE_DIR=$(SOURCE_DIR)
 	@$(MAKE) --silent browser BSF_FLAGS=$(BSF_FLAGS) BSF_DIR=$(BSF_DIR) BSF_OUT=$(BSF_OUT) BSF_SRC=$(BSF_SRC)
-	@$(MAKE) --silent html SOURCE_DIR=$(SOURCE_DIR)
+	@$(MAKE) --silent html
 	@printf '\e[1;32m  %-10s\e[m%s\n' 'done'
