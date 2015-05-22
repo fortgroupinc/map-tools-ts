@@ -1,8 +1,3 @@
-
-# MAINTAINER:
-# Peter Chanthamynavong <peterc@zephyrhealth.com>
-# Gert Petja <gpetja@zephyrhealth.com>
-
 # ----------------------------------------------------------------------------------------------------------------------
 
 BUILD_DIR  ?= build
