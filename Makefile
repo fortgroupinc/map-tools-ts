@@ -57,6 +57,7 @@ compile: TS_FLAGS   = '--sourceMap --target ES5 --module commonjs'
 compile: BSF_FLAGS  = '--standalone mapTools --debug'
 compile: BSF_DIR    = $(BUILD_DIR)/
 compile: BSF_SRC    = $(BUILD_DIR)/index.js
+compile: BSF_OUT    = dist/mapTools.js
 compile:
 	@$(MAKE) ts TS_FLAGS=$(TS_FLAGS) BUILD_DIR=$(BUILD_DIR) SOURCE_DIR=$(SOURCE_DIR)
 	@$(MAKE) browser BSF_FLAGS=$(BSF_FLAGS) BSF_DIR=$(BSF_DIR) BSF_OUT=$(BSF_OUT) BSF_SRC=$(BSF_SRC)
