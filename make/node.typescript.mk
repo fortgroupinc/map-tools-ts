@@ -2,7 +2,6 @@
 
 BUILD_DIR  ?= build
 SOURCE_DIR ?= lib
-DTS_DIR    ?= typings
 
 TS_EXE   := node_modules/typescript/bin/tsc
 TS_SRC   := $(filter-out $(wildcard $(SOURCE_DIR)/*/*.d.ts), $(wildcard $(SOURCE_DIR)/*.ts $(SOURCE_DIR)/*/*.ts))
