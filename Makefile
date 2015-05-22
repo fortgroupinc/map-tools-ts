@@ -51,7 +51,6 @@ include make/common.help.mk
 
 include make/node.typescript.mk
 include make/node.browserify.mk
-include make/node.html.mk
 
 # app targets calling other targets in sub Makefile
 # ----------------------------------------------------------------------------------------------------------------------
@@ -60,5 +59,5 @@ include make/node.html.mk
 clean: ts-clean browser-clean
 	@printf '\e[1;32m  %-10s\e[m%s\n' 'done'
 
-compile: ts browser html
+compile: ts browser
 	@printf '\e[1;32m  %-10s\e[m%s\n' 'done'
