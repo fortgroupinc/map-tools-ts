@@ -60,5 +60,5 @@ include make/node.html.mk
 clean: ts-clean browser-clean
 	@printf '\e[1;32m  %-10s\e[m%s\n' 'done'
 
-compile: ts browser html
+compile: ts browser
 	@printf '\e[1;32m  %-10s\e[m%s\n' 'done'
