@@ -1,7 +1,7 @@
 /// <reference path="references.ts"/>
 module mapTools {
 
-  export class createMap {
+  export class Wrapper {
 
     public instance = {};
 

@@ -4,4 +4,4 @@ module mapTools {
 }
 
 // Node
-module.exports = mapTools.createMap;
+module.exports = mapTools.Wrapper;
