@@ -84,3 +84,4 @@ lib/*.js
 build
 *.orig
 dist
+tmp
