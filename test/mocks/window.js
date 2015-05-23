@@ -16,9 +16,12 @@ module.exports = {
       appended: {},
       appendChild: function(script) {
         this.appended = script;
-        if (global.mapTools.maps) {
-          global.mapTools.maps.mymap.create();
+
+
+        if (global.window.mapTools.maps) {
+          global.window.mapTools.maps.mymap.create();
         }
+
 
         return script;
       }

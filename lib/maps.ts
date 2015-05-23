@@ -1,7 +1,7 @@
-/// <reference path="references.ts"/>
-class Gmaps {
-
-  constructor() {}
+/// <reference path="utils.ts"/>
+/// <reference path="config.ts"/>
+/// <reference path="typings/tsd.d.ts"/>
+class Maps {
 
   /**
    * Injects Google API Javascript File and adds a callback to load the Google Maps Async.
@@ -10,15 +10,15 @@ class Gmaps {
    *
    * @returns the element appended
    */
-  load(id, args) {
+  public static load(id, args) {
     var version = args.version || Config.version;
-    var script = document.createElement('script');
+    var script = window.document.createElement('script');
     script.type = 'text/javascript';
     script.src = Config.url + '?v=' + version + '&callback=mapTools.maps.' + id + '.create';
-    return document.body.appendChild(script);
+    return window.document.body.appendChild(script);
   }
 
-  mapOptions(args) {
+  public static mapOptions(args) {
     // To clone Arguments excluding customMapOptions
     var result = Utils.clone(args, Config.customMapOptions);
 

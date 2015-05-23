@@ -1,7 +1,7 @@
 interface utilsClone {
   zoom: string;
   center: {};
-  mapTypeId: string;
+  mapTypeId: any;
 }
 
 class Utils {
