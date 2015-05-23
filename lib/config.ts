@@ -1,3 +1,4 @@
+/// <reference path="typings/tsd.d.ts"/>
 class Config {
   public static version: string = '3.18'; // Released: May 15, 201
   public static url: string =  '//maps.googleapis.com/maps/api/js';
