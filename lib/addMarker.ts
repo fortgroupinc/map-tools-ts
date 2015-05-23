@@ -1,4 +1,4 @@
-class addMarker {
+class AddMarker {
 
   private instance;
 

@@ -8,7 +8,7 @@ class Index {
   constructor(options, cb) {
 
     this.instance = {good: 'instance'};
-    this.addMarker = new addMarker().add;
+    this.addMarker = new AddMarker().add;
 
     console.log('creates a map! with options %s', options, this.instance);
     cb();
