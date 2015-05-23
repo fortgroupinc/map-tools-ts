@@ -11,5 +11,5 @@ global.sinon = require('sinon');
 
 global.window = require('../test/mocks/window');
 global.google = require('../test/mocks/google-maps');
-global.window.mapTools = require('index');
+global.mapTools = require('index');
 

@@ -10,7 +10,7 @@ class Maps {
    *
    * @returns the element appended
    */
-  public static load(id, args) {
+  public static load(id, args): {} {
     var version = args.version || Config.version;
     var script = window.document.createElement('script');
     script.type = 'text/javascript';
@@ -18,7 +18,7 @@ class Maps {
     return window.document.body.appendChild(script);
   }
 
-  public static mapOptions(args) {
+  public static mapOptions(args): {} {
     // To clone Arguments excluding customMapOptions
     var result = Utils.clone(args, Config.customMapOptions);
 

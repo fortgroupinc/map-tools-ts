@@ -10,9 +10,9 @@ class Index {
     this.instance = {good: 'instance'};
     this.addMarker = new AddMarker().add;
 
-    console.log('creates a map! with options %s', options, this.instance);
-    cb();
+    var map = new AddMap(this);
 
+    map.load(options, cb);
   }
 }
 
