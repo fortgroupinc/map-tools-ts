@@ -1,6 +1,12 @@
+interface utilsClone {
+  zoom: string;
+  center: {};
+  mapTypeId: string;
+}
+
 class Utils {
 
-  public static clone(o: {}, exceptionKeys?: string[]): {}{
+  public static clone(o: {}, exceptionKeys?: string[]): utilsClone {
     var out, v, key;
     out = Array.isArray(o) ? [] : {};
     for (key in o) {
