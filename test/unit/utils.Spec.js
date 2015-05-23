@@ -2,7 +2,7 @@ describe('Given the Utils Module', function () {
 
   var config;
   beforeEach(function() {
-    config = require('config');
+    config = require('config.ts').mapTools.Config;
   });
 
   it('should have a version number', function () {

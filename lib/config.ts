@@ -1,5 +1,5 @@
 /// <reference path="references.ts"/>
-module mapTools {
+export module mapTools {
   export class Config {
     public static version: string = '3.18'; // Released: May 15, 201
     public static url: string =  '//maps.googleapis.com/maps/api/js';
@@ -11,5 +11,3 @@ module mapTools {
     public static customEvents: string[] = ['marker_visibility_changed'];
   }
 }
-
-module.exports = mapTools.Config;

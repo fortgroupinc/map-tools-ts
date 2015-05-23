@@ -1,5 +1,5 @@
 /// <reference path="references.ts"/>
-module mapTools {
+export module mapTools {
 
   export class Wrapper {
 

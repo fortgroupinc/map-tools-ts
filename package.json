@@ -12,7 +12,7 @@
     "clean": "make ts-clean",
     "bo": "browserify --standalone 'mapTools' --debug -o mapTools-standlone.js -- build/yago/index.js",
     "start": "browser-sync start --server --index index.html",
-    "test": "NODE_PATH=build mocha -r ./test/bootstrap.js --recursive test"
+    "test": "NODE_PATH=lib mocha -r ./test/bootstrap.js --recursive test"
   },
   "repository": {
     "type": "git",
@@ -59,6 +59,7 @@
     "sinon": "^1.14.1",
     "sinon-chai": "^2.7.0",
     "typescript": "1.4.1",
+    "typescript-require": "^0.2.9",
     "uglify-js": "^2.4.16"
   },
   "dependencies": {
