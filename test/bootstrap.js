@@ -13,3 +13,5 @@ global.window = require('../test/mocks/window');
 global.google = require('../test/mocks/google-maps');
 global.mapTools = require('index');
 
+global.crossfilter = require('crossfilter');
+
