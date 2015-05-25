@@ -7,6 +7,7 @@ class Index {
   public addTopoJson;
   public addGeoJson;
   public addPanel;
+  public center;
 
   public locate;
   public crossfilter = require('crossfilter');
@@ -35,6 +36,8 @@ class Index {
     this.addPanel = function(options, cb) {
       return addPanel.addPanel(options, cb);
     };
+
+    this.center = new Center().pos;
 
     this.locate = new Locate().locate;
 
