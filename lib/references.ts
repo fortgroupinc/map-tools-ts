@@ -9,5 +9,6 @@
 /// <reference path="filter.ts"/>
 /// <reference path="center.ts"/>
 /// <reference path="locate.ts"/>
+/// <reference path="updateMarker.ts"/>
 /// <reference path="index.ts"/>
 

@@ -7,6 +7,7 @@ class Index {
   public addGeoJson;
   public addPanel;
   public center;
+  public updateMarker;
 
   public locate;
   public crossfilter = require('crossfilter');
@@ -37,6 +38,14 @@ class Index {
     this.center = new Center().pos;
 
     this.locate = new Locate().locate;
+
+
+    var updateMarker = new UpdateMarker(this);
+
+    this.updateMarker = function(args, options) {
+      return updateMarker.update(args, options);
+    };
+
 
     var map = new AddMap(this);
     map.load(options, cb);

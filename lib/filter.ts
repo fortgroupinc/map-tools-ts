@@ -75,7 +75,7 @@ class Filter {
     return markers;
   }
 
-  public filter(args, options) {
+  public filter(args, options?) {
 
     // Return All items if no arguments are supplied
     if (typeof args === 'undefined' && typeof options === 'undefined') {

@@ -34,7 +34,7 @@ class InfoWindow {
   }
 
   private open(map, marker, options) {
-    close();
+    this.close();
     this.infoWindow(map, marker, options);
   }
 
