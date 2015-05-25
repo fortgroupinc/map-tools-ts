@@ -1,13 +1,16 @@
-
-
+/// <reference path="typings/tsd.d.ts"/>
+/// <reference path="utils.ts"/>
+/// <reference path="config.ts"/>
 class InfoWindow {
   'use strict';
+
+  private timer;
 
   constructor(public that) {
 
   }
 
-  private timer = false;
+
 
   private infoWindow(map, marker, args) {
     var content = false;
@@ -23,7 +26,7 @@ class InfoWindow {
       content = content || marker.infoWindow.content;
     }
 
-    var options = Utils.clone(args);
+    var options: any = Utils.clone(args);
     options.content = content;
 
     this.that.infoWindow = new google.maps.InfoWindow(options);

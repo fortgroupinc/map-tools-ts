@@ -65,7 +65,7 @@ describe('Given map-tools.js', function () {
       });
     });
 
-    xdescribe('with crossfilter', function () {
+    describe('with crossfilter', function () {
       it('should add the marker data to the filters', function () {
         var spy = sinon.spy();
         var map = new mapTools({sync: true, id: 'mymap', type: 'ROADMAP', lat: 41.3833, lng: 2.1833});

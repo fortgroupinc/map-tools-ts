@@ -30,7 +30,7 @@ class Utils {
     });
   }
 
-  public static prepareOptions(options, custom) {
+  public static prepareOptions(options, custom) : {custom: {open?: {on: string}; close?: {on: string; duration: number}}; defaults: {}} {
     var result = {custom: {}, defaults: {}}, option;
     for (option in options) {
       if (options.hasOwnProperty(option)) {
