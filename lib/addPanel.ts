@@ -112,7 +112,6 @@ class AddPanel {
         panel = options.template;
       }
 
-      console.log('this.onSuccess', this.onSuccess)
       this.onSuccess(options, position, panel, cb);
     }
 
