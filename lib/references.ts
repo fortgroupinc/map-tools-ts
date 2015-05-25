@@ -5,6 +5,8 @@
 /// <reference path="addMarker.ts"/>
 /// <reference path="addFeature.ts"/>
 /// <reference path="addPanel.ts"/>
+/// <reference path="addFilter.ts"/>
+/// <reference path="filter.ts"/>
 /// <reference path="center.ts"/>
 /// <reference path="locate.ts"/>
 /// <reference path="index.ts"/>

@@ -2,7 +2,6 @@
 class Index {
 
   public instance;
-
   public addMarker;
   public addTopoJson;
   public addGeoJson;
@@ -19,7 +18,6 @@ class Index {
       return addMarker.addMarker(marker, options);
     };
 
-
     var addFeature = new AddFeature(this);
 
     this.addTopoJson = function(data, options) {
@@ -29,7 +27,6 @@ class Index {
     this.addGeoJson = function(data, options) {
       return addFeature.addGeoJson(data, options);
     };
-
 
     var addPanel = new AddPanel(this);
 
