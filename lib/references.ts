@@ -12,5 +12,6 @@
 /// <reference path="updateMarker.ts"/>
 /// <reference path="updateMap.ts"/>
 /// <reference path="updateFeature.ts"/>
+/// <reference path="removeMarker.ts"/>
 /// <reference path="index.ts"/>
 

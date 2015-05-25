@@ -10,6 +10,7 @@ class Index {
   public updateMarker;
   public updateMap;
   public updateFeature;
+  public removeMarker;
 
   public locate;
   public crossfilter = require('crossfilter');
@@ -58,6 +59,12 @@ class Index {
 
     this.updateFeature = function(args, options) {
       return updateFeature.update(args, options);
+    };
+
+
+    var removeMarker = new RemoveMarker(this);
+    this.removeMarker = function(args) {
+      return removeMarker.removeMarker(args)
     };
 
 
