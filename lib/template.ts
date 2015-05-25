@@ -11,7 +11,7 @@ class Template {
   var xhr = new XMLHttpRequest();
   xhr.open("GET", url);
 
-  xhr.onload = function () {
+  xhr.onload = () => {
 
     if (xhr.readyState === 4) {
       if (xhr.status === 200) {

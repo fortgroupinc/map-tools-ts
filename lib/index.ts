@@ -90,6 +90,12 @@ class Index {
       return findMarker.filter(args, options);
     };
 
+    // Unit Tests?
+    var findFeature = new Filter(this, 'json');
+    this.findFeature = function(args, options) {
+      return findFeature.filter(args, options);
+    };
+
     var map = new AddMap(this);
     map.load(options, cb);
   }

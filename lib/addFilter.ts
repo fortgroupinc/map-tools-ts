@@ -8,7 +8,7 @@ class AddFilter {
 
   public addFilter(filters) {
 
-    this.that[this.type].crossfilter = this.that[this.type].crossfilter || crossfilter([]);
+    this.that[this.type].crossfilter = this.that[this.type].crossfilter || this.that.crossfilter([]);
     this.that[this.type].filter = this.that[this.type].filter || {};
 
 

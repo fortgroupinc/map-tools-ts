@@ -38,7 +38,7 @@ TS_FLAGS   := --sourceMap --target ES5 --module commonjs
 BSF_FLAGS  := --standalone mapTools --debug --verbose
 BSF_DIR    := $(BUILD_DIR)/
 BSF_SRC    := $(BUILD_DIR)/index.js
-BSF_OUT    := dist/mapTools.js
+BSF_OUT    := dist/map-tools.js
 
 # include sub Makefiles
 # ----------------------------------------------------------------------------------------------------------------------
