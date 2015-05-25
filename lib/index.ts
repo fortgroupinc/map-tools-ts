@@ -13,9 +13,18 @@ class Index {
   public removeMarker;
   public resetMarker;
   public findMarker;
+  public findFeature;
 
   public locate;
   public crossfilter = require('crossfilter');
+
+  zoom(zoom?: number): number {
+    if (typeof zoom === 'undefined') {
+      return this.instance.getZoom();
+    } else {
+      this.instance.setZoom(zoom);
+    }
+  }
 
   constructor(options, cb) {
     var addMarker = new AddMarker(this);
