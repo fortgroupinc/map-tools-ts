@@ -11,6 +11,8 @@ class Index {
   public updateMap;
   public updateFeature;
   public removeMarker;
+  public resetMarker;
+  public findMarker;
 
   public locate;
   public crossfilter = require('crossfilter');
@@ -67,6 +69,17 @@ class Index {
       return removeMarker.removeMarker(args)
     };
 
+
+    var resetMarker = new ResetMarker(this);
+    this.resetMarker = function(args, options) {
+      return resetMarker.resetMarker(args, options)
+    };
+
+
+    var findMarker = new Filter(this, 'markers');
+    this.findMarker = function(args, options) {
+      return findMarker.filter(args, options);
+    };
 
     var map = new AddMap(this);
     map.load(options, cb);

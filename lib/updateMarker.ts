@@ -58,7 +58,7 @@ class UpdateMarker {
     this.addTags(marker, options);
   }
 
-  customUpdate(marker, options) {
+  public customUpdate(marker, options) {
 
     if (options.custom) {
       if (options.custom.move) {
