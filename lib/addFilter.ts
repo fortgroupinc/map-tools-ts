@@ -4,8 +4,7 @@
 class AddFilter {
 
 
-  constructor(public that, public type) {
-  }
+  constructor(public that, public type) {}
 
   public addFilter(filters) {
 

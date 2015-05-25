@@ -2,7 +2,11 @@
 class Index {
 
   public instance;
+
   public addMarker;
+  public addTopoJson;
+  public addGeoJson;
+
   public locate;
   public crossfilter = require('crossfilter');
 
@@ -11,6 +15,17 @@ class Index {
 
     this.addMarker = function(marker, options) {
       return addMarker.addMarker(marker, options);
+    };
+
+
+    var addFeature = new AddFeature(this);
+
+    this.addTopoJson = function(data, options) {
+      return addFeature.addTopoJson(data, options);
+    };
+
+    this.addGeoJson = function(data, options) {
+      return addFeature.addGeoJson(data, options);
     };
 
     this.locate = new Locate().locate;
