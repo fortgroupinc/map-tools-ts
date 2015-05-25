@@ -10,5 +10,7 @@
 /// <reference path="center.ts"/>
 /// <reference path="locate.ts"/>
 /// <reference path="updateMarker.ts"/>
+/// <reference path="updateMap.ts"/>
+/// <reference path="updateFeature.ts"/>
 /// <reference path="index.ts"/>
 

@@ -8,6 +8,8 @@ class Index {
   public addPanel;
   public center;
   public updateMarker;
+  public updateMap;
+  public updateFeature;
 
   public locate;
   public crossfilter = require('crossfilter');
@@ -44,6 +46,18 @@ class Index {
 
     this.updateMarker = function(args, options) {
       return updateMarker.update(args, options);
+    };
+
+    var updateMap = new UpdateMap(this);
+
+    this.updateMap = function(args) {
+      updateMap.updateMap(args)
+    };
+
+    var updateFeature = new UpdateFeature(this);
+
+    this.updateFeature = function(args, options) {
+      return updateFeature.update(args, options);
     };
 
 
